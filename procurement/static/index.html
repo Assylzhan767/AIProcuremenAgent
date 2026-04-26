@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Procurement Agent</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">AI</div>
+      <div>
+        <h1>Procurement Agent</h1>
+        <p class="sub">Госзакупки и поставщики РК</p>
+      </div>
+    </div>
+
+    <nav class="topnav" id="topnav">
+      <button class="nav-item active" data-page="home">Главная</button>
+      <button class="nav-item" data-page="registry">Реестр</button>
+      <button class="nav-item" data-page="apps">Мои заявки</button>
+      <button class="nav-item" data-page="report">Отчёт</button>
+      <button class="nav-item" data-page="chats">Чаты <span class="nav-badge" id="chatBadge"></span></button>
+      <button class="nav-item" data-page="profile">Профиль</button>
+    </nav>
+
+    <div class="topbar-right">
+      <div class="status" id="status">Готов</div>
+      <button class="icon-btn" id="langBtn" title="Язык">RU</button>
+      <button class="icon-btn" id="themeBtn" title="Тема">🌙</button>
+      <div id="authArea" class="auth-area"></div>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">×</button>
+      <h2 id="modalTitle">Вход</h2>
+      <div class="modal-tabs">
+        <button class="tab active" data-mode="login">Вход</button>
+        <button class="tab" data-mode="register">Регистрация</button>
+      </div>
+      <form id="authForm">
+        <label>Логин</label>
+        <input type="text" id="username" autocomplete="username" required />
+        <label>Пароль</label>
+        <input type="password" id="password" autocomplete="current-password" required />
+        <div id="authError" class="form-error"></div>
+        <button type="submit" id="authSubmit" class="btn-primary full">Войти</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
